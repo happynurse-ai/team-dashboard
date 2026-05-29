@@ -137,7 +137,7 @@ export default function MeetingMinutesPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/meeting-stt.txt')
+    fetch(import.meta.env.BASE_URL + 'meeting-stt.txt')
       .then((res) => {
         if (!res.ok) throw new Error('STT 파일을 찾을 수 없습니다.')
         return res.text()

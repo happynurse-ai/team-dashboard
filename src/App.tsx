@@ -150,7 +150,7 @@ function App() {
   }, [darkMode])
 
   useEffect(() => {
-    fetch('/data-2025.csv')
+    fetch(import.meta.env.BASE_URL + 'data-2025.csv')
       .then((res) => res.text())
       .then((text) => {
         setData(parseCSV(text))
